@@ -36,8 +36,8 @@ export class ButtonCodeLensProvider implements vscode.CodeLensProvider {
                 pushCodeLens(codeLenses, range, `Run on Markdown`, `markdown.runOnMarkdown`, [language, code, range]);
             }
             // For bash code blocks, provide `run in terminal (line by line)` option
-            if (language === `bash`) {
-                pushCodeLens(codeLenses, range, `Run in Terminal`, `markdown.runInTerminal`, [code]);
+            if (language) {
+                pushCodeLens(codeLenses, range, `Run in Repl(Terminal)`, `markdown.runInTerminal`, [code]);
             }
             // Always provide button to copy code
             pushCodeLens(codeLenses, range, `Copy`, `markdown.copy`, [code]);
